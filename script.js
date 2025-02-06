@@ -1,4 +1,30 @@
+// List of valid emails
+const validEmails = [
+    'test@example.com',
+    'teacher@school.edu',
+    'admin@education.org'
+];
+
 document.addEventListener('DOMContentLoaded', function() {
+    // Email form handling
+    const emailForm = document.getElementById('emailForm');
+    const emailInput = document.getElementById('emailInput');
+    const linkContainer = document.getElementById('linkContainer');
+
+    emailForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = emailInput.value.trim().toLowerCase();
+        
+        if (validEmails.includes(email)) {
+            linkContainer.classList.remove('hidden');
+            emailInput.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+        } else {
+            linkContainer.classList.add('hidden');
+            emailInput.style.borderColor = '#e73c7e';
+            alert('Το email δεν είναι έγκυρο.');
+        }
+    });
+
     const countdownElement = document.getElementById('countdown');
     const eventDate = new Date('February 26, 2025 17:00:00').getTime();
 

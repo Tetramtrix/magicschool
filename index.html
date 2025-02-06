@@ -13,9 +13,18 @@
             <h1>Τετάρτη 26/02/2025</h1>
             <h2>5:00 μ.μ. - 7:00 μ.μ.</h2>
         </div>
-        <div id="countdown" class="countdown">
-            <p>Loading countdown...</p>
+    <div id="countdown" class="countdown">
+        <p>Loading countdown...</p>
+    </div>
+    <div class="email-section">
+        <form id="emailForm" onsubmit="return false;">
+            <input type="email" id="emailInput" placeholder="Εισάγετε το email σας" required>
+            <button type="submit">Υποβολή</button>
+        </form>
+        <div id="linkContainer" class="hidden">
+            <a href="https://google.com" target="_blank">Πατήστε εδώ για να δείτε το περιεχόμενο</a>
         </div>
+    </div>
     </div>
     <script src="script.js"></script>
 </body>
