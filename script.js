@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const countdownElement = document.getElementById('countdown');
-    const eventDate = new Date('February 26, 2025 17:00:00').getTime();
+    const eventDate = new Date('March 03, 2025 17:00:00').getTime();
 
     function updateCountdown() {
         const now = new Date().getTime();
