@@ -62,61 +62,11 @@ body::before {
     margin-right: auto;
 }
 
-.event-info h1 {
-    font-size: 2em;
-    margin: 0;
-    padding: 10px;
-}
-
-.event-info h2 {
-    font-size: 1.5em;
-    margin: 0;
-    padding: 10px;
-}
-
-.countdown {
-    margin-top: 40px;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.countdown div {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    min-width: 120px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.countdown div span {
-    display: block;
-    font-size: 3em;
-    color: #2c5364;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.countdown div p {
-    margin: 5px 0 0;
-    color: #2c5364;
-    font-size: 0.8em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
 
 /* Large Desktop (1440px and up) */
 @media (min-width: 1440px) {
     .main-title {
         font-size: 3em;
-    }
-    .countdown div {
-        min-width: 150px;
-    }
-    .countdown div span {
-        font-size: 4em;
     }
 }
 
@@ -124,12 +74,6 @@ body::before {
 @media (max-width: 1439px) and (min-width: 1024px) {
     .main-title {
         font-size: 2.5em;
-    }
-    .countdown div {
-        min-width: 130px;
-    }
-    .countdown div span {
-        font-size: 3.5em;
     }
 }
 
@@ -139,12 +83,6 @@ body::before {
         font-size: 2em;
         padding: 0 20px;
     }
-    .countdown div {
-        min-width: 110px;
-    }
-    .countdown div span {
-        font-size: 3em;
-    }
 }
 
 /* Tablet Portrait (481px to 767px) */
@@ -152,22 +90,6 @@ body::before {
     .main-title {
         font-size: 1.8em;
         padding: 0 15px;
-    }
-    .countdown {
-        gap: 15px;
-    }
-    .countdown div {
-        min-width: 100px;
-        padding: 15px;
-    }
-    .countdown div span {
-        font-size: 2.5em;
-    }
-    .event-info h1 {
-        font-size: 1.6em;
-    }
-    .event-info h2 {
-        font-size: 1.3em;
     }
 }
 
@@ -180,25 +102,6 @@ body::before {
         font-size: 1.5em;
         margin-bottom: 30px;
     }
-    .countdown {
-        gap: 10px;
-    }
-    .countdown div {
-        min-width: 70px;
-        padding: 10px;
-    }
-    .countdown div span {
-        font-size: 2em;
-    }
-    .countdown div p {
-        font-size: 0.7em;
-    }
-    .event-info h1 {
-        font-size: 1.4em;
-    }
-    .event-info h2 {
-        font-size: 1.2em;
-    }
 }
 
 /* Small Mobile (320px and down) */
@@ -206,86 +109,94 @@ body::before {
     .main-title {
         font-size: 1.3em;
     }
-    .countdown div {
-        min-width: 60px;
-        padding: 8px;
-    }
-    .countdown div span {
-        font-size: 1.8em;
-    }
-    .countdown div p {
-        font-size: 0.6em;
-    }
 }
 
-/* Email section styles */
-.email-section {
+/* Google Button Styles */
+.google-button-container {
     margin-top: 40px;
     text-align: center;
 }
 
-#emailForm {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-#emailInput {
-    padding: 12px 20px;
-    font-size: 1em;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.9);
-    min-width: 300px;
-}
-
-#emailForm button {
-    padding: 12px 30px;
-    font-size: 1em;
-    background: #2c5364;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-#emailForm button:hover {
-    background: #1f3d4a;
-}
-
-#linkContainer {
-    margin-top: 20px;
-}
-
-#linkContainer.hidden {
-    display: none;
-}
-
-#linkContainer a {
+.google-button {
     display: inline-block;
-    padding: 15px 30px;
-    background: #23d5ab;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
+    padding: 18px 36px;
+    font-size: 1.2em;
     font-weight: bold;
-    transition: background 0.3s ease;
+    color: white;
+    background: linear-gradient(45deg, #4285f4, #34a853, #fbbc05, #ea4335);
+    background-size: 300% 300%;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: gradientButtonAnimation 5s ease infinite;
 }
 
-#linkContainer a:hover {
-    background: #1ca886;
+.google-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
 }
 
-@media (max-width: 600px) {
-    #emailForm {
-        flex-direction: column;
-        align-items: center;
+.google-button:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.google-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.google-button:hover::before {
+    opacity: 1;
+    animation: shine 1.5s ease;
+}
+
+@keyframes shine {
+    0% {
+        left: -50%;
+        opacity: 0;
     }
-    
-    #emailInput {
-        min-width: 250px;
+    50% {
+        opacity: 1;
+    }
+    100% {
+        left: 150%;
+        opacity: 0;
+    }
+}
+
+@keyframes gradientButtonAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
     }
 }
 
@@ -300,8 +211,5 @@ body::before {
     }
     .main-title {
         margin-bottom: 20px;
-    }
-    .countdown {
-        margin-top: 20px;
     }
 }
